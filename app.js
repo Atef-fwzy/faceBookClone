@@ -21,6 +21,7 @@ app.use(express.json())  // then the app can understand the json file
 app.use(xss())
 app.use(helmet())
 app.use(hpp())
+app.set('trust proxy', 1);
 app.use(rateLimating({
      window : 10* 60 * 100 ,// 10 minutes
      max:200,
