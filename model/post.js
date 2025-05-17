@@ -54,8 +54,8 @@ const post = mongoose.model("post",postschema)
 
 const  validateCreatePost = (obj)=>{
        const schema = joi.object({
-              description: joi.string().trim().min(20).required(),
-              category:joi.string().trim().required()
+              description: joi.string().trim().min(2).required(),
+              category:joi.string().trim()
 
        })
         return schema.validate(obj);
