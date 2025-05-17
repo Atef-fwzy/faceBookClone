@@ -18,8 +18,9 @@ const createNewPost = async(req,res)=>{
         return  res.status(404).json({satate:"filed",message:"user not found"})
 
     let result = "";
-        if(error)
-             return   res.status(400).json({message:error})
+        if(error){
+            return   res.status(400).json({message:error})
+        }
 
     if(req.file){
              const iamgePath = path.join(__dirname,`../images/${req.file.filename}`)
